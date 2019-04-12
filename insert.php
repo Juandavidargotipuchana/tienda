@@ -13,10 +13,11 @@
 	
 	if ($conn->query($sql)===TRUE){
 		
-		echo "producto registrado con exito.<br>";
+		echo "<script language='javascript'>alert('producto registrado con exito')</script>";
 		echo "<br><a href ='index.php'<regresar</a<";
 		
-		
+		//echo "<br>a href='index.php'regresar</a>";
+		header("Refresh:0, url=index.php");
 	}
 	  else {
 		  

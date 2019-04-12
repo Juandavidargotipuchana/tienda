@@ -20,7 +20,83 @@
     </table><br>
         <center><input type="submit" value="Registrar"></center>             
     </form>
+	<hr> 
     
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+
+
+include ("database.php");
+
+
+echo "<table border='1'>";
+echo "<tr><th>codigo</th><th>nombre</th><th>canidad</th><th>.</th> <th>.</th></tr>";
+
+
+
+
+
+$sql ="SELECT * FROM productos";
+
+$result = $conn->query($sql);
+
+
+if ($result->num_rows > 0){
+	while($row = $result->fetch_assoc()){
+		
+		
+		echo "<tr>";
+		echo "<td>".$row['codigo_prod']."</td>";
+		echo "<td>".$row['nombre_prod']."</td>";			
+		echo "<td>".$row['cantidad']."</td>";		
+		echo "<td><a href =¡'update.php'><img src ='icons/edit.png'width='30'></a></td>";
+		echo "<td><a href =¡'update.php'><img src ='icons/delete.png'width='30'></a></td>";
+	
+		echo"</tr>";
+	
+	}
+	
+	
+}else {
+	echo " NO hay productos registrados ";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
 
